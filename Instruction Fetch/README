@@ -51,7 +51,8 @@ Verification covers:
   - 
 
 ### Testbench and Waveform
-![Mux] (images/
+![Mux](images/Screenshot 2026-10-14 101855.png)
+The testbench source is available .
 
 ## Reproduction Instructions
 ### Tools and Versions
