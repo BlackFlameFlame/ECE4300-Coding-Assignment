@@ -1,1 +1,71 @@
+# Lab 1 - Instruction Fetch (IF)
 
+## Design Scope and Assumptions
+In Scope: 
+Implementation of the Instruction Fetch (IF) state of a 32-bit MIPS pipeline using five components:
+Program Counter (PC), Multiplexer (MUX), Incrementer Memory, and IF/ID Pipeline Latch
+
+
+Out of Scope: 
+Instruction decoding, execution, data memory access, register write-back, and the remaining pipeline stages
+
+Assumption:
+  - Uses 32-bit instructions and addresses
+  - PC and IF/ID Latch updates on the rising edge of the clock
+  - Reset is active-high and asynchronous for the PC and IF/ID Latch
+  - PC increments by 4 during normal sequential execution
+  - Instruction memory uses direct addressing without an offset or address shifting
+  - The MUX selects either the sequential address or branch address
+  - The Testbench uses a 10 ns clock period
+
+Limitations:
+  - Only the first 10 instructions are initialized
+  - The simulation memory uses 40 addressable locations instead of allocating all 2^32 words
+  - Uninitialized or out-of-range memory addresses return unknown values
+  - Branch control and branch target addresses are supplied externally
+
+## Requirements
+| Requirement | Description | Verification Method | 
+| REQ-01 | The PC shall store and update a 32-bit address on the rising clock edge | PC testbench and waveform |
+| REQ-02 | The MUX shall select between the sequential or branch addresses | MUX testbench and waveform |
+| REQ-03 | The Incrementer shall add 4 to the current PC address | Incrementer testbench and waveform |
+| REQ-04 | Instruction Memory shall return the instruction stored at the specified address without an offset | Instruction Memory testbench and waveform |
+| REQ-05 | The IF/ID Latch shall store the instruction and the next PC address on the rising edge of the clock | IF/ID Latch testbench and waveform |
+| REQ-06 | The complete IF stage shall connect all five components and fetch the instruction sequentially | Fetch testbench and waveform |
+| REQ-07 | The PC and IF/ID Latch shall clear their outputs when reset is asserted | Rest test cases |
+
+## Architecture
+### Timing or Behavioral Summary
+
+## Implementation
+### Source Code
+| File | Description |
+
+### Implementation Notes
+
+## Verificaton
+### Verification Strategy
+The design is verified using ...
+
+Verification covers: 
+  - 
+
+### Testbench and Waveform
+
+
+## Reproduction Instructions
+### Tools and Versions
+  - 
+  - 
+  - 
+  - 
+
+### Build and Run
+
+
+## Repository Organization
+
+## Known Issues and Future Improvements
+  - 
+  - 
+  - 
