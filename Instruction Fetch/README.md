@@ -25,14 +25,15 @@ Limitations:
   - Branch control and branch target addresses are supplied externally
 
 ## Requirements
-- | Requirement | Description | Verification Method | 
-- | REQ-01 | The PC shall store and update a 32-bit address on the rising clock edge | PC testbench and waveform |
-- | REQ-02 | The MUX shall select between the sequential or branch addresses | MUX testbench and waveform |
-- | REQ-03 | The Incrementer shall add 4 to the current PC address | Incrementer testbench and waveform |
-- | REQ-04 | Instruction Memory shall return the instruction stored at the specified address without an offset | Instruction Memory testbench and waveform |
-- | REQ-05 | The IF/ID Latch shall store the instruction and the next PC address on the rising edge of the clock | IF/ID Latch testbench and waveform |
-- | REQ-06 | The complete IF stage shall connect all five components and fetch the instruction sequentially | Fetch testbench and waveform |
-- | REQ-07 | The PC and IF/ID Latch shall clear their outputs when reset is asserted | Reset test cases |
+| Requirement | Description | Verification Method | 
+|---|---|---|
+| REQ-01 | The PC shall store and update a 32-bit address on the rising clock edge | PC testbench and waveform |
+| REQ-02 | The MUX shall select between the sequential or branch addresses | MUX testbench and waveform |
+| REQ-03 | The Incrementer shall add 4 to the current PC address | Incrementer testbench and waveform |
+| REQ-04 | Instruction Memory shall return the instruction stored at the specified address without an offset | Instruction Memory testbench and waveform |
+| REQ-05 | The IF/ID Latch shall store the instruction and the next PC address on the rising edge of the clock | IF/ID Latch testbench and waveform |
+| REQ-06 | The complete IF stage shall connect all five components and fetch the instruction sequentially | Fetch testbench and waveform |
+| REQ-07 | The PC and IF/ID Latch shall clear their outputs when reset is asserted | Reset test cases |
 
 ## Architecture
 ### Timing or Behavioral Summary
@@ -42,12 +43,12 @@ Limitations:
 ### Source Code
 | File | Description |
 |---|---|
-| mux.v | Selects between the sequential and branch addresses |
-- | PC.v | Stores and updates the current Program Counter |
-- | incrementer.v | Adds 4 to the current PC |
-- | instrMem.v | Stores and returns 32-bit instructions |
-- | ifIdLatch.v | Stores the fetched instruction and next PC |
-- | fetch_tb.v | Testbench for verifying the complete IF stage | 
+| ['mux.v'](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/568a7755109705a3497eb5972b71fb255304ad9c/Instruction%20Fetch/mux.v) | Selects between the sequential and branch addresses |
+| ['PC.v'](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/568a7755109705a3497eb5972b71fb255304ad9c/Instruction%20Fetch/PC.v) | Stores and updates the current Program Counter |
+| ['incrementer.v'](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/568a7755109705a3497eb5972b71fb255304ad9c/Instruction%20Fetch/incrementer.v) | Adds 4 to the current PC |
+| ['instrMem.v'](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/568a7755109705a3497eb5972b71fb255304ad9c/Instruction%20Fetch/instrMem.v) | Stores and returns 32-bit instructions |
+| ['ifIdLatch.v'](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/568a7755109705a3497eb5972b71fb255304ad9c/Instruction%20Fetch/ifIdLatch.v) | Stores the fetched instruction and next PC |
+| ['fetch_tb.v'](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/568a7755109705a3497eb5972b71fb255304ad9c/Instruction%20Fetch/fetch_tb.v) | Testbench for verifying the complete IF stage | 
 
 ### Implementation Notes
 - The PC and IF/ID Latch use nonblocking assignments to update their stored values on the rising edge of the clock.
@@ -77,12 +78,12 @@ Verification covers:
 ![ifIdLatch Waveform](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104327.png)
 ![fetch Waveform](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20102027.png)
 
-- The mux Testbench source is available [*here*](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/mux_tb.v)
-- The PC Testbench source is available [*here*](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/pc_tb.v)
-- The instrMem Testbench source is available [*here*](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/c5bf9e01f3320f6cbb9b9c3309333a1c511d5d42/Instruction%20Fetch/instrMem_tb.v)
-- The incrementer Testbench source is available [*here*](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/incrementer_tb.v)
-- The ifIdLatch Testbench source is available [*here*](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/ifIdLatch_tb.v)
-- The fetch Testbench source is available [*here*](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/fetch_tb.v)
+ The mux Testbench source is available [*here*](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/mux_tb.v)
+The PC Testbench source is available [*here*](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/pc_tb.v)
+The instrMem Testbench source is available [*here*](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/c5bf9e01f3320f6cbb9b9c3309333a1c511d5d42/Instruction%20Fetch/instrMem_tb.v)
+The incrementer Testbench source is available [*here*](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/incrementer_tb.v)
+The ifIdLatch Testbench source is available [*here*](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/ifIdLatch_tb.v)
+The fetch Testbench source is available [*here*](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/fetch_tb.v)
 
 ### Results
 | Test Case | Expected Result | Observed Result | Status |
