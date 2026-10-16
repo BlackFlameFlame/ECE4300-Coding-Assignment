@@ -134,6 +134,7 @@ Expected Output:
 
 
 ## Repository Organization
+'''Text
 ..
 - |--images
 -   |--README 
@@ -157,6 +158,7 @@ Expected Output:
 - |--mux.v
 - |--mux_tb.v
 - |--pc_tb.v
+'''
 
 ## Known Issues and Future Improvements
 - The Instruction Memory currently contains only 10 initialized instructions and uses a smaller memory array for simulation 
