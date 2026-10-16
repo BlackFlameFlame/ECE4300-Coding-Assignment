@@ -40,8 +40,9 @@ Limitations:
 
 ## Implementation
 ### Source Code
-- | File | Description |
-- | mux.v | Selects between the sequential and branch addresses |
+| File | Description |
+|---|---|
+| mux.v | Selects between the sequential and branch addresses |
 - | PC.v | Stores and updates the current Program Counter |
 - | incrementer.v | Adds 4 to the current PC |
 - | instrMem.v | Stores and returns 32-bit instructions |
