@@ -135,28 +135,28 @@ Expected Output:
 
 ## Repository Organization
 ..
-|___images
-    |--README 
-    |--Screenshot 2026-10-14 101855.png
-    |--Screenshot 2026-10-14 102027.png
-    |--Screenshot 2026-10-14 104036.png
-    |--Screenshot 2026-10-14 104327.png
-    |--Screenshot 2026-10-14 104640.png
-    |--Screenshot 2026-10-14 104823.png
-    |--Screenshot 2026-10-16 115146.png
-|--PC.v
-|--README
-|--fetch.v
-|--fetch_tb.v
-|--ifIdLatch.v
-|--ifIdLatch_tb.v
-|--incrementer.v
-|--incrementer_tb.v
-|--instrMem.v
-|--instrMem_tb.v
-|--mux.v
-|--mux_tb.v
-|--pc_tb.v
+- |--images
+-     |--README 
+-     |--Screenshot 2026-10-14 101855.png
+-     |--Screenshot 2026-10-14 102027.png
+-     |--Screenshot 2026-10-14 104036.png
+-     |--Screenshot 2026-10-14 104327.png
+-     |--Screenshot 2026-10-14 104640.png
+-     |--Screenshot 2026-10-14 104823.png
+-     |--Screenshot 2026-10-16 115146.png
+- |--PC.v
+- |--README
+- |--fetch.v
+- |--fetch_tb.v
+- |--ifIdLatch.v
+- |--ifIdLatch_tb.v
+- |--incrementer.v
+- |--incrementer_tb.v
+- |--instrMem.v
+- |--instrMem_tb.v
+- |--mux.v
+- |--mux_tb.v
+- |--pc_tb.v
 
 ## Known Issues and Future Improvements
 - The Instruction Memory currently contains only 10 initialized instructions and uses a smaller memory array for simulation 
