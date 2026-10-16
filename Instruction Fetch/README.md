@@ -69,12 +69,12 @@ Verification covers:
 - Operation of the complete Instruction Fetch stage
 
 ### Testbench and Waveform
-- !mux Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20101855.png)
-- !PC Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104036.png)
-- !instrMem Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104640.png)
-- !incrementer Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104823.png)
-- !ifIdLatch Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104327.png)
-- !fetch Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20102027.png)
+- mux Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20101855.png)
+- PC Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104036.png)
+- instrMem Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104640.png)
+- incrementer Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104823.png)
+- ifIdLatch Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104327.png)
+- fetch Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20102027.png)
 
 - The mux Testbench source is available (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/mux_tb.v)
 - The PC Testbench source is available (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/pc_tb.v)
@@ -112,6 +112,7 @@ Verification covers:
 9. Save the timing diagrams and screenshots in the images/ folder.
 
 Expected Output: 
+'''
 Time=0 rst=1 PC=         0 Instr=00000000 NextPC=         0
 Time=12000 rst=0 PC=         0 Instr=00000000 NextPC=         0
 Time=15000 rst=0 PC=         4 Instr=a00000aa NextPC=         4
@@ -131,6 +132,7 @@ Time=145000 rst=0 PC=        28 Instr=60000066 NextPC=        28
 Time=155000 rst=0 PC=        32 Instr=70000077 NextPC=        32
 Time=165000 rst=0 PC=        36 Instr=80000088 NextPC=        36
 Time=175000 rst=0 PC=        40 Instr=90000099 NextPC=        40
+'''
 
 ## Repository Organization
 ..
