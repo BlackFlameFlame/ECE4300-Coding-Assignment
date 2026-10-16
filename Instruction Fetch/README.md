@@ -113,9 +113,9 @@ The fetch Testbench source is available [*here*](https://github.com/BlackFlameFl
 
 ## Reproduction Instructions
 ### Tools and Versions
-  - Simulator/Synthesis Tool: Xilinx Vivado 2025.2
-  - Language: Verilog HDL
-  - Operating System: Windows 10-11 
+  - **Simulator/Synthesis Tool:** Xilinx Vivado 2025.2
+  - **Language:** Verilog HDL
+  - **Operating System:** Windows
     
 
 ### Build and Run
