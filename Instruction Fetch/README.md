@@ -103,13 +103,13 @@ The fetch Testbench source is available [*here*](https://github.com/BlackFlameFl
 ### Results
 | Test Case | Expected Result | Observed Result | Status |
 |---|---|---|---|
-| TC-01 - PC | PC increases by 4 during sequential execution | PC increased from 0 to 40 in increments of 4 | PASS |
-| TC-02 - mux | Expected Result | Observed Result | Status |
-| TC-03 - icrementer | Expected Result | Observed Result | Status |
-| TC-04 - instrMem | Correct instruction returne for each initialized address | All 10 initialized instructions were fetched in the expected sequence | PASS |
-| TC-05 - ifIdLatch | Instruction and next PC captured on rising clock edge | Instructions and next PC values updated at the expected clock edges | PASS | 
-| TC-06 - fetch | Fetching resumes from the selected branch address | Instructions were fetched sequentially from adress 16 onward | PASS
-| TC-07 - Reset | PC and IF/ID outputs reset to 0 | Output initalized to zero when reset was asserted | PASS |
+| TC-01 - PC | Updates the PC address on the rising clock edge and resets to zero | PC initialized to 0 and increased by 4 each clock cycle | PASS |
+| TC-02 - mux | Selects between sequential and branch addresses | PC changed from 40 to branch address 16 | PASS |
+| TC-03 - incrementer | Adds 3 to the current PC address | PC increased sequentially from 0 to 40 in increments of 4 | PASS |
+| TC-04 - instrMem | Correct instruction returns for each initialized address | All 10 initialized instructions were fetched correctly | PASS |
+| TC-05 - ifIdLatch | Stores the instruction and next PC on rising clock edge | Instructions and next PC values updated at each rising clock edge | PASS | 
+| TC-06 - fetch | Connects all five modules and fetches instructions correctly | Sequential instruction fetching and branch redirection operated as expected | PASS
+| TC-07 - Reset | PC, Instruction Memory, and PC clear to 0 when reset is asserted | Inital simulation showed all three outputs at zero when reset was active | PASS |
 
 ## Reproduction Instructions
 ### Tools and Versions
@@ -130,26 +130,27 @@ The fetch Testbench source is available [*here*](https://github.com/BlackFlameFl
 9. Save the timing diagrams and screenshots in the images/ folder.
 
 Expected Output: 
-- Time=0 rst=1 PC=         0 Instr=00000000 NextPC=         0
-- Time=12000 rst=0 PC=         0 Instr=00000000 NextPC=         0
-- Time=15000 rst=0 PC=         4 Instr=a00000aa NextPC=         4
-- Time=25000 rst=0 PC=         8 Instr=10000011 NextPC=         8
-- Time=35000 rst=0 PC=        12 Instr=20000022 NextPC=        12
-- Time=45000 rst=0 PC=        16 Instr=30000033 NextPC=        16
-- Time=55000 rst=0 PC=        20 Instr=40000044 NextPC=        20
-- Time=65000 rst=0 PC=        24 Instr=50000055 NextPC=        24
-- Time=75000 rst=0 PC=        28 Instr=60000066 NextPC=        28
-- Time=85000 rst=0 PC=        32 Instr=70000077 NextPC=        32
-- Time=95000 rst=0 PC=        36 Instr=80000088 NextPC=        36
-- Time=105000 rst=0 PC=        40 Instr=90000099 NextPC=        40
-- Time=115000 rst=0 PC=        16 Instr=xxxxxxxx NextPC=        44
-- Time=125000 rst=0 PC=        20 Instr=40000044 NextPC=        20
-- Time=135000 rst=0 PC=        24 Instr=50000055 NextPC=        24
-- Time=145000 rst=0 PC=        28 Instr=60000066 NextPC=        28
-- Time=155000 rst=0 PC=        32 Instr=70000077 NextPC=        32
-- Time=165000 rst=0 PC=        36 Instr=80000088 NextPC=        36
-- Time=175000 rst=0 PC=        40 Instr=90000099 NextPC=        40
-
+```Text
+Time=0 rst=1 PC=         0 Instr=00000000 NextPC=         0
+Time=12000 rst=0 PC=         0 Instr=00000000 NextPC=         0
+Time=15000 rst=0 PC=         4 Instr=a00000aa NextPC=         4
+Time=25000 rst=0 PC=         8 Instr=10000011 NextPC=         8
+Time=35000 rst=0 PC=        12 Instr=20000022 NextPC=        12
+Time=45000 rst=0 PC=        16 Instr=30000033 NextPC=        16
+Time=55000 rst=0 PC=        20 Instr=40000044 NextPC=        20
+Time=65000 rst=0 PC=        24 Instr=50000055 NextPC=        24
+Time=75000 rst=0 PC=        28 Instr=60000066 NextPC=        28
+Time=85000 rst=0 PC=        32 Instr=70000077 NextPC=        32
+Time=95000 rst=0 PC=        36 Instr=80000088 NextPC=        36
+Time=105000 rst=0 PC=        40 Instr=90000099 NextPC=        40
+Time=115000 rst=0 PC=        16 Instr=xxxxxxxx NextPC=        44
+Time=125000 rst=0 PC=        20 Instr=40000044 NextPC=        20
+Time=135000 rst=0 PC=        24 Instr=50000055 NextPC=        24
+Time=145000 rst=0 PC=        28 Instr=60000066 NextPC=        28
+Time=155000 rst=0 PC=        32 Instr=70000077 NextPC=        32
+Time=165000 rst=0 PC=        36 Instr=80000088 NextPC=        36
+Time=175000 rst=0 PC=        40 Instr=90000099 NextPC=        40
+```
 
 ## Repository Organization
 .
