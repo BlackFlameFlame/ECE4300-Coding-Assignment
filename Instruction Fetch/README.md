@@ -88,13 +88,13 @@ The fetch Testbench source is available [*here*](https://github.com/BlackFlameFl
 ### Results
 | Test Case | Expected Result | Observed Result | Status |
 |---|---|---|---|
-- | TC-01 - PC | PC increases by 4 during sequential execution | PC increased from 0 to 40 in increments of 4 | PASS |
-- | TC-02 - mux | Expected Result | Observed Result | Status |
-- | TC-03 - icrementer | Expected Result | Observed Result | Status |
-- | TC-04 - instrMem | Correct instruction returne for each initialized address | All 10 initialized instructions were fetched in the expected sequence | PASS |
-- | TC-05 - ifIdLatch | Instruction and next PC captured on rising clock edge | Instructions and next PC values updated at the expected clock edges | PASS | 
-- | TC-06 - fetch | Fetching resumes from the selected branch address | Instructions were fetched sequentially from adress 16 onward | PASS
-- | TC-07 - Reset | PC and IF/ID outputs reset to 0 | Output initalized to zero when reset was asserted | PASS |
+| TC-01 - PC | PC increases by 4 during sequential execution | PC increased from 0 to 40 in increments of 4 | PASS |
+| TC-02 - mux | Expected Result | Observed Result | Status |
+| TC-03 - icrementer | Expected Result | Observed Result | Status |
+| TC-04 - instrMem | Correct instruction returne for each initialized address | All 10 initialized instructions were fetched in the expected sequence | PASS |
+| TC-05 - ifIdLatch | Instruction and next PC captured on rising clock edge | Instructions and next PC values updated at the expected clock edges | PASS | 
+| TC-06 - fetch | Fetching resumes from the selected branch address | Instructions were fetched sequentially from adress 16 onward | PASS
+| TC-07 - Reset | PC and IF/ID outputs reset to 0 | Output initalized to zero when reset was asserted | PASS |
 
 ## Reproduction Instructions
 ### Tools and Versions
