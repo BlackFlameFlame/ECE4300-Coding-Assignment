@@ -25,14 +25,14 @@ Limitations:
   - Branch control and branch target addresses are supplied externally
 
 ## Requirements
-| Requirement | Description | Verification Method | 
-| REQ-01 | The PC shall store and update a 32-bit address on the rising clock edge | PC testbench and waveform |
-| REQ-02 | The MUX shall select between the sequential or branch addresses | MUX testbench and waveform |
-| REQ-03 | The Incrementer shall add 4 to the current PC address | Incrementer testbench and waveform |
-| REQ-04 | Instruction Memory shall return the instruction stored at the specified address without an offset | Instruction Memory testbench and waveform |
-| REQ-05 | The IF/ID Latch shall store the instruction and the next PC address on the rising edge of the clock | IF/ID Latch testbench and waveform |
-| REQ-06 | The complete IF stage shall connect all five components and fetch the instruction sequentially | Fetch testbench and waveform |
-| REQ-07 | The PC and IF/ID Latch shall clear their outputs when reset is asserted | Reset test cases |
+- | Requirement | Description | Verification Method | 
+- | REQ-01 | The PC shall store and update a 32-bit address on the rising clock edge | PC testbench and waveform |
+- | REQ-02 | The MUX shall select between the sequential or branch addresses | MUX testbench and waveform |
+- | REQ-03 | The Incrementer shall add 4 to the current PC address | Incrementer testbench and waveform |
+- | REQ-04 | Instruction Memory shall return the instruction stored at the specified address without an offset | Instruction Memory testbench and waveform |
+- | REQ-05 | The IF/ID Latch shall store the instruction and the next PC address on the rising edge of the clock | IF/ID Latch testbench and waveform |
+- | REQ-06 | The complete IF stage shall connect all five components and fetch the instruction sequentially | Fetch testbench and waveform |
+- | REQ-07 | The PC and IF/ID Latch shall clear their outputs when reset is asserted | Reset test cases |
 
 ## Architecture
 ### Timing or Behavioral Summary
@@ -40,13 +40,13 @@ Timing Summary (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blo
 
 ## Implementation
 ### Source Code
-| File | Description |
-| mux.v | Selects between the sequential and branch addresses |
-| PC.v | Stores and updates the current Program Counter |
-| incrementer.v | Adds 4 to the current PC |
-| instrMem.v | Stores and returns 32-bit instructions |
-| ifIdLatch.v | Stores the fetched instruction and next PC |
-| fetch_tb.v | Testbench for verifying the complete IF stage | 
+- | File | Description |
+- | mux.v | Selects between the sequential and branch addresses |
+- | PC.v | Stores and updates the current Program Counter |
+- | incrementer.v | Adds 4 to the current PC |
+- | instrMem.v | Stores and returns 32-bit instructions |
+- | ifIdLatch.v | Stores the fetched instruction and next PC |
+- | fetch_tb.v | Testbench for verifying the complete IF stage | 
 
 ### Implementation Notes
 - The PC and IF/ID Latch use nonblocking assignments to update their stored values on the rising edge of the clock.
@@ -55,7 +55,7 @@ Timing Summary (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blo
 - Instruction Memory accesses memory directly using the specified address without shifting or applying an offset.
 - The clock is generated in the testbench using forever #5 clk = ~clk;, producing a 10 ns clock period.
 - The Incrementer and Instruction Memory include clock and reset inputs for compatibility with the IF stage.
-- 
+
 ## Verificaton
 ### Verification Strategy
 The design is verified using Verilog behavioral simulation and timing diagrams. Each component is tested individually to verify its functionality before being connected into the complete Instruction Fetch Stage.
@@ -69,36 +69,35 @@ Verification covers:
 - Operation of the complete Instruction Fetch stage
 
 ### Testbench and Waveform
-!mux Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20101855.png)
-!PC Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104036.png)
-!instrMem Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104640.png)
-!incrementer Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104823.png)
-!ifIdLatch Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104327.png)
-!fetch Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20102027.png)
+- !mux Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20101855.png)
+- !PC Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104036.png)
+- !instrMem Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104640.png)
+- !incrementer Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104823.png)
+- !ifIdLatch Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20104327.png)
+- !fetch Waveform (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-14%20102027.png)
 
-The mux Testbench source is available (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/mux_tb.v)
-The PC Testbench source is available (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/pc_tb.v)
-The instrMem Testbench source is available (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/pc_tb.v)
-The incrementer Testbench source is available (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/incrementer_tb.v)
-The ifIdLatch Testbench source is available (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/ifIdLatch_tb.v)
-The fetch Testbench source is available (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/fetch_tb.v)
+- The mux Testbench source is available (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/mux_tb.v)
+- The PC Testbench source is available (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/pc_tb.v)
+- The instrMem Testbench source is available (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/pc_tb.v)
+- The incrementer Testbench source is available (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/incrementer_tb.v)
+- The ifIdLatch Testbench source is available (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/ifIdLatch_tb.v)
+- The fetch Testbench source is available (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/fetch_tb.v)
 
 ### Results
-| Test Case | Expected Result | Observed Result | Status |
-| TC-01 - PC | PC increases by 4 during sequential execution | PC increased from 0 to 40 in increments of 4 | PASS |
-| TC-02 - mux | Expected Result | Observed Result | Status |
-| TC-03 - icrementer | Expected Result | Observed Result | Status |
-| TC-04 - instrMem | Correct instruction returne for each initialized address | All 10 initialized instructions were fetched in the expected sequence | PASS |
-| TC-05 - ifIdLatch | Instruction and next PC captured on rising clock edge | Instructions and next PC values updated at the expected clock edges | PASS | 
-| TC-06 - fetch | Fetching resumes from the selected branch address | Instructions were fetched sequentially from adress 16 onward | PASS
-| TC-07 - Reset | PC and IF/ID outputs reset to 0 | Output initalized to zero when reset was asserted | PASS |
+- | Test Case | Expected Result | Observed Result | Status |
+- | TC-01 - PC | PC increases by 4 during sequential execution | PC increased from 0 to 40 in increments of 4 | PASS |
+- | TC-02 - mux | Expected Result | Observed Result | Status |
+- | TC-03 - icrementer | Expected Result | Observed Result | Status |
+- | TC-04 - instrMem | Correct instruction returne for each initialized address | All 10 initialized instructions were fetched in the expected sequence | PASS |
+- | TC-05 - ifIdLatch | Instruction and next PC captured on rising clock edge | Instructions and next PC values updated at the expected clock edges | PASS | 
+- | TC-06 - fetch | Fetching resumes from the selected branch address | Instructions were fetched sequentially from adress 16 onward | PASS
+- | TC-07 - Reset | PC and IF/ID outputs reset to 0 | Output initalized to zero when reset was asserted | PASS |
 
 ## Reproduction Instructions
 ### Tools and Versions
   - Simulator/Synthesis Tool: Xilinx Vivado 2025.2
   - Language: Verilog HDL
-  - Operating System: Windows 10-11
-  - 
+  - Operating System: Windows 10-11 
     
 
 ### Build and Run
