@@ -157,28 +157,28 @@ Time=175000 rst=0 PC=        40 Instr=90000099 NextPC=        40
 ## Repository Organization
 ```text
 .
--|--images
--     |--README 
--     |--Screenshot 2026-10-14 101855.png
--     |--Screenshot 2026-10-14 102027.png
--     |--Screenshot 2026-10-14 104036.png
--     |--Screenshot 2026-10-14 104327.png
--     |--Screenshot 2026-10-14 104640.png
--     |--Screenshot 2026-10-14 104823.png
--     |--Screenshot 2026-10-16 132746.png
-- |--PC.v
-- |--README
-- |--fetch.v
-- |--fetch_tb.v
-- |--ifIdLatch.v
-- |--ifIdLatch_tb.v
-- |--incrementer.v
-- |--incrementer_tb.v
-- |--instrMem.v
-- |--instrMem_tb.v
-- |--mux.v
-- |--mux_tb.v
-- |--pc_tb.v
+|--images
+     |--README 
+     |--Screenshot 2026-10-14 101855.png
+     |--Screenshot 2026-10-14 102027.png
+     |--Screenshot 2026-10-14 104036.png
+     |--Screenshot 2026-10-14 104327.png
+     |--Screenshot 2026-10-14 104640.png
+     |--Screenshot 2026-10-14 104823.png
+     |--Screenshot 2026-10-16 132746.png
+|--PC.v
+|--README
+|--fetch.v
+|--fetch_tb.v
+|--ifIdLatch.v
+|--ifIdLatch_tb.v
+|--incrementer.v
+|--incrementer_tb.v
+|--instrMem.v
+|--instrMem_tb.v
+|--mux.v
+|--mux_tb.v
+|--pc_tb.v
 ```
 
 
