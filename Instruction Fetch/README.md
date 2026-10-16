@@ -134,16 +134,16 @@ Expected Output:
 
 
 ## Repository Organization
-..
--- |--images
---   |--README 
---   |--Screenshot 2026-10-14 101855.png
---   |--Screenshot 2026-10-14 102027.png
---   |--Screenshot 2026-10-14 104036.png
---   |--Screenshot 2026-10-14 104327.png
---   |--Screenshot 2026-10-14 104640.png
---   |--Screenshot 2026-10-14 104823.png
---   |--Screenshot 2026-10-16 132746.png
+.
+-|--images
+-     |--README 
+-     |--Screenshot 2026-10-14 101855.png
+-     |--Screenshot 2026-10-14 102027.png
+-     |--Screenshot 2026-10-14 104036.png
+-     |--Screenshot 2026-10-14 104327.png
+-     |--Screenshot 2026-10-14 104640.png
+-     |--Screenshot 2026-10-14 104823.png
+-     |--Screenshot 2026-10-16 132746.png
 - |--PC.v
 - |--README
 - |--fetch.v
