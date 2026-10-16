@@ -119,6 +119,7 @@ The fetch Testbench source is available [*here*](https://github.com/BlackFlameFl
     
 
 ### Build and Run
+```bash
 1. Open Xilinx Vivado and create a new RTL project.
 2. Add PC.v, mux.v, incrementer.v, instrMem.v, ifIdLatch.v, and fetch.v as Design Sources.
 3. Add fetch_tb.v as a Simulation Source.
@@ -128,6 +129,7 @@ The fetch Testbench source is available [*here*](https://github.com/BlackFlameFl
 7. Verify that Instruction Memory returns the correct instruction for each address.
 8. Test the MUX branch selection and reset behavior.
 9. Save the timing diagrams and screenshots in the images/ folder.
+```
 
 Expected Output: 
 ```Text
@@ -153,6 +155,7 @@ Time=175000 rst=0 PC=        40 Instr=90000099 NextPC=        40
 ```
 
 ## Repository Organization
+```text
 .
 -|--images
 -     |--README 
@@ -176,6 +179,7 @@ Time=175000 rst=0 PC=        40 Instr=90000099 NextPC=        40
 - |--mux.v
 - |--mux_tb.v
 - |--pc_tb.v
+```
 
 
 ## Known Issues and Future Improvements
