@@ -3,9 +3,9 @@
 module mux
     #(parameter WIDTH = 32)
     (
-        input wire sel, 
-        input [31:0] a_true, //Branch Address From ExMem
-        input [31:0] b_false, //Next Sequential Address (PC + 4)
+        input wire sel,         //Select Signal
+        input [31:0] a_true,    //Branch Address From ExMem
+        input [31:0] b_false,   //Next Sequential Address (PC + 4)
         output [31:0] y
     );
     
