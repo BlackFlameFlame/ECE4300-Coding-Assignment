@@ -84,7 +84,8 @@ Verification covers:
 - The fetch Testbench source is available [*here*](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/fetch_tb.v)
 
 ### Results
-- | Test Case | Expected Result | Observed Result | Status |
+| Test Case | Expected Result | Observed Result | Status |
+|---|---|---|---|
 - | TC-01 - PC | PC increases by 4 during sequential execution | PC increased from 0 to 40 in increments of 4 | PASS |
 - | TC-02 - mux | Expected Result | Observed Result | Status |
 - | TC-03 - icrementer | Expected Result | Observed Result | Status |
