@@ -36,7 +36,7 @@ Limitations:
 
 ## Architecture
 ### Timing or Behavioral Summary
-Timing Summary (https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Fetch/images/Screenshot%202026-10-16%20115146.png)
+Timing Summary (Instruction Fetch/images/Screenshot 2026-10-16 132746.png)
 
 ## Implementation
 ### Source Code
