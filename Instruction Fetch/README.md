@@ -164,4 +164,3 @@ Time=175000 rst=0 PC=        40 Instr=90000099 NextPC=        40
 - Future improvements could include loading additional instructions from an external memory initialization file
 - Additional test cases could be implemented to verify branch selection, PC overflow, and reset timing
 - The Instruction Fetch stage could be integrated with the remaining MIPS pipeline stages to create a complete processor
-- 
