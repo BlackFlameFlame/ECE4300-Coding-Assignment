@@ -20,7 +20,7 @@ Assumption:
 
 Limitations:
   - Only the first 10 instructions are initialized
-  - The simulation memory uses 36 addressable locations instead of allocating all 2^32 words
+  - The simulation memory uses 40 addressable locations instead of allocating all 2^32 words
   - Uninitialized or out-of-range memory addresses return unknown values
   - Branch control and branch target addresses are supplied externally
 
