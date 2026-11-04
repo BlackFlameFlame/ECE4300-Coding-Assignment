@@ -12,7 +12,6 @@ module execute(
     input wire [4:0] instr_20_16,
     input wire [4:0] instr_15_11,
     input wire [1:0] alu_op,
-    input wire [5:0] funct,
     input wire alusrc,
     input wire regdst,
     
@@ -45,7 +44,7 @@ module execute(
     );
     
     alu_control alu_control3(
-        .funct(funct),
+        .funct(s_extend[5:0]),
         .aluop(alu_op),
         .select(alu_control_wire)
     );
