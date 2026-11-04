@@ -1,29 +1,10 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/03/2026 04:37:40 PM
-// Design Name: 
-// Module Name: alu_control
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 
 module alu_control(
     input wire [5:0] funct,     // Lower 6 bits of the instruction (from s_extend[5:0])
-    input wire [1:0] aluop,     // 2-bit main opcode configuration tracking bundle
-    output reg [2:0] select     // 3-bit operational control output sent to drive the ALU core
+    input wire [1:0] aluop,     
+    output reg [2:0] select     
 );
 
     // Main Type Parameters
@@ -38,9 +19,9 @@ module alu_control(
     parameter ALUand = 3'b000;
     parameter ALUor  = 3'b001;
     parameter ALUslt = 3'b111;
-    parameter ALUx   = 3'b011; // Catch-all undefined operation parameter
+    parameter ALUx   = 3'b011; 
 
-    // R-Type Function Field Constants
+    
     parameter FUNCTadd = 6'b100000;
     parameter FUNCTsub = 6'b100010;
     parameter FUNCTand = 6'b100100;
@@ -50,13 +31,13 @@ module alu_control(
     always @(*) begin
         case (aluop)
             lwsw: begin
-                select = ALUadd; // Loads and stores always evaluate via arithmetic addition
+                select = ALUadd; 
             end
             Itype: begin
-                select = ALUsub; // Branches (BEQ) use subtraction for evaluation comparisons
+                select = ALUsub; 
             end
             Rtype: begin
-                case (funct) // Sub-decode R-type math operations using the funct field bits
+                case (funct) 
                     FUNCTadd: select = ALUadd;
                     FUNCTsub: select = ALUsub;
                     FUNCTand: select = ALUand;
@@ -66,7 +47,7 @@ module alu_control(
                 endcase
             end
             default: begin
-                select = ALUx; // Safe default assignment block for unmapped instructions
+                select = ALUx; 
             end
         endcase
     end
