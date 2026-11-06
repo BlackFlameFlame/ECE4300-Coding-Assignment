@@ -1,23 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/03/2026 05:09:12 PM
-// Design Name: 
-// Module Name: execute
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 
 module execute(
@@ -43,21 +24,18 @@ module execute(
     output wire [4:0] muxout_out
     );
 
-    // Internal connecting structural wiring lanes
     wire [31:0] b_operand;
     wire [31:0] aluout;
     wire [4:0] muxout;
     wire [2:0] alu_control_wire;
     wire aluzero;
 
-    // Instance: Target Address Generation Adder
     adder adder3(
         .add_in1(npc),
         .add_in2(s_extend),
         .add_out(adder_out)
     );
 
-    // Instance: Write Register Location Selection Multiplexer
     bottom_mux bottom_mux3(
         .a(instr_15_11),
         .b(instr_20_16),
@@ -65,14 +43,12 @@ module execute(
         .y(muxout)
     );
 
-    // Instance: Local instruction function bit slice decoder
     alu_control alu_control3(
         .funct(funct),
         .aluop(alu_op),
         .select(alu_control_wire)
     );
 
-    // Instance: Operand source select input multiplexer
     top_mux top_mux3(
         .a(s_extend),
         .b(rdata2),
@@ -80,7 +56,6 @@ module execute(
         .y(b_operand)
     );
 
-    // Instance: Execution Stage Central Processing Core 
     alu alu3(
         .a(rdata1),
         .b(b_operand),
@@ -89,7 +64,6 @@ module execute(
         .zero(aluzero)
     );
 
-    // Instance: Stage-Splitting Synchronous Transition Pipeline Latch 
     ex_mem ex_mem3(
         .clk(clk),
         .ctlwb_out(ctlwb_in),
