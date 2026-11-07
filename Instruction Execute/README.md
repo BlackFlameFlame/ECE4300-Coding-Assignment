@@ -1,4 +1,4 @@
-![Adder Waveform](https://github.com/BlackFlameFlame/ECE4300-CodingAssignment/blob/main/Instruction%20Execute/images/ADDER%20WAVEFORM.png)
+![Adder Waveform](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Execute/images/ADDER%20WAVEFORM.png)
 
 ![Alu Waveform](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Execute/images/ALU%20WAVEFORM.png)
 
