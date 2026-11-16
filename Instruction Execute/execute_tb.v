@@ -11,6 +11,7 @@ module execute_tb;
     reg alusrc, regdst;
 
     wire [1:0] ctlwb_out, ctlm_out;
+    wire zero;
     wire [31:0] adder_out, alu_result_out, rdata2_out;
     wire [4:0] muxout_out;
 
@@ -34,7 +35,8 @@ module execute_tb;
         .adder_out(adder_out),
         .alu_result_out(alu_result_out),
         .rdata2_out(rdata2_out),
-        .muxout_out(muxout_out)
+        .muxout_out(muxout_out),
+        .zero_out(zero)
     );
     
     initial begin
@@ -66,6 +68,14 @@ module execute_tb;
         alu_op = 2'b01; 
         funct = 6'b100010;
 
+        #15;
+        
+        alusrc = 1; 
+        regdst = 0;
+        s_extend = 32'd10;
+        alu_op = 2'b01; 
+        funct = 6'b100010;
+        
         #15;
 
         $stop;
