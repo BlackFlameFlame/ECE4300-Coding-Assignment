@@ -10,7 +10,13 @@ Out of Scope:
 Writeback, Memory, ALU Source, ALUOp, Register Destination, and forwarding logic
 
 Assumption:
-  - 
+- The Execute stage receives the necessary data and control signals from the Instruction Decode (ID) stage through the ID/EX pipeline latch.
+* All arithmetic operations use 32-bit data, while the ALU uses a 3-bit control signal to select the operation.
+* The ALU supports addition, subtraction, bitwise AND, bitwise OR, and Set Less Than (SLT).
+* The Top Mux selects between the second register value and the sign-extended immediate using ALUSrc.
+* The Bottom Mux selects the destination register using RegDst.
+* The EX/MEM pipeline latch stores the Execute stage outputs on the rising edge of the clock.
+* The Adder calculates the branch target using the provided next program counter (NPC) and sign-extended immediate.
 
 Limitations: 
   - 
