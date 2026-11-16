@@ -57,7 +57,13 @@ The Execute stage was implemented using Verilog HDL in Xilinx Vivado. Each compo
 The design is verified using Verilog behavioral simulation and timing diagrams. Each component is tested individually to verify its functionality before being connected into a complete Execute Stage. 
 
 Verification Covers: 
-  - 
+  - Verifies the addition of the 32-bit next program counter (NPC) and sign-extended immediate to calculate the branch target address. Tests positive values, negative values, zero, and overflow
+  - Verifies ADD, SUB, AND, OR, and SLT operations using the 3-bit control signal. Also checks signed comparisons and the Zero flag
+  - Verifies that the correct ALU control signal is generated from ALUOp and the instruction function field
+  - Verifies that ALUSrc selects between the second register value (ReadData2) and the sign-extended immediate
+  - Verifies that RegDst selects the correct destination register between instruction bits [20:16] and [15:11]
+  - Verifies that control signals, branch target, ALU result, Zero flag, register data, and destination register are stored on the rising clock edge
+  - Verifies the connections between all six components and the transfer of results to the Memory stage
 
 ### Testbench and Waveform
 ![Adder Waveform](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Execute/images/ADDER%20WAVEFORM.png)
