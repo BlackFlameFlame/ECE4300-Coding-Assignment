@@ -21,11 +21,13 @@ module execute(
     output wire [31:0] adder_out,
     output wire [31:0] alu_result_out,
     output wire [31:0] rdata2_out,
-    output wire [4:0] muxout_out
+    output wire [4:0] muxout_out,
+    output wire zero_out
     );
 
     wire [31:0] b_operand;
     wire [31:0] aluout;
+    wire [31:0] adder_in;
     wire [4:0] muxout;
     wire [2:0] alu_control_wire;
     wire aluzero;
@@ -68,11 +70,12 @@ module execute(
         .clk(clk),
         .ctlwb_out(ctlwb_in),
         .ctlm_out(ctlm_in),
-        .adder_out(adder_out),
+        .adder_out(adder_in),
         .aluzero(aluzero),
         .aluout(aluout),
         .readdat2(rdata2),
         .muxout(muxout),
+        .zero(zero_out),
         
         .wb_ctlout(ctlwb_out),
         .ctlm_ctlout(ctlm_out),
