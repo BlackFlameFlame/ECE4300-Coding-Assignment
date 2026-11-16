@@ -29,6 +29,13 @@ Limitations:
 ## Requirements
 | Requirement | Description | Verification Method |
 |---|---|---|
+|Adder|Add 32-bit next program counter with sign immediate to calculate the branch target address|adder_tb.v|
+|Top Mux |Selects between ReadData2 and SignExtend using ALUSrc|execute_tb.v|
+|ALU|Performs ADD, SUB, AND, OR, and SLT operations|alu_tb.v|
+|ALU Control|Generates the ALU control signal based on ALUOp and the function field|alu_control_tb.v|
+|Bottom Mux|Selects the destination register using RegDst|execute_tb.v|
+|EX/MEM Pipeline Latch|Stores control signals and Execute stage outputs on the rising clock edge|execute_tb.v|
+|Execute Stage|Connects all six components into the complete Execute stage|execute_tb.v|
 
 ## Implementation
 ### Source Code
