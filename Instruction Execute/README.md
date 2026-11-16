@@ -75,5 +75,5 @@ The ALU Testbench source is available [*here*](https://github.com/BlackFlameFlam
 ![ALU Control Waveform](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Execute/images/alu_control_tb.png)
 The ALU Control Testbench source is available [*here*](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Execute/alu_control_tb.v)
 
-![Execute Waveform](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Execute/images/execute_tb_screenshot.png)
+![Execute Waveform]()
 The Execute Testbench source is available [*here*](https://github.com/BlackFlameFlame/ECE4300-Coding-Assignment/blob/main/Instruction%20Execute/execute_tb.v)
