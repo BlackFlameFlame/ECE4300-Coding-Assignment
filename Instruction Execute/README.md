@@ -11,15 +11,20 @@ Writeback, Memory, ALU Source, ALUOp, Register Destination, and forwarding logic
 
 Assumption:
 - The Execute stage receives the necessary data and control signals from the Instruction Decode (ID) stage through the ID/EX pipeline latch.
-* All arithmetic operations use 32-bit data, while the ALU uses a 3-bit control signal to select the operation.
-* The ALU supports addition, subtraction, bitwise AND, bitwise OR, and Set Less Than (SLT).
-* The Top Mux selects between the second register value and the sign-extended immediate using ALUSrc.
-* The Bottom Mux selects the destination register using RegDst.
-* The EX/MEM pipeline latch stores the Execute stage outputs on the rising edge of the clock.
-* The Adder calculates the branch target using the provided next program counter (NPC) and sign-extended immediate.
+- All arithmetic operations use 32-bit data, while the ALU uses a 3-bit control signal to select the operation.
+- The ALU supports addition, subtraction, bitwise AND, bitwise OR, and Set Less Than (SLT).
+- The Top Mux selects between the second register value and the sign-extended immediate using ALUSrc.
+- The Bottom Mux selects the destination register using RegDst.
+- The EX/MEM pipeline latch stores the Execute stage outputs on the rising edge of the clock.
+- The Adder calculates the branch target using the provided next program counter (NPC) and sign-extended immediate.
 
 Limitations: 
-  - 
+- The Execute stage does not independently fetch, decode, or write back instructions.
+- Memory reads and writes are handled by the separate Memory stage.
+- Data forwarding and hazard detection are not included in the basic Execute-stage implementation.
+- The ALU supports only the five defined operations. Unsupported ALU control values produce an unknown result in simulation.
+- Arithmetic results are limited to 32 bits, and any carry beyond the 32-bit result is discarded.
+- The Execute stage depends on the preceding pipeline stage to provide valid operands and control signals.
 
 ## Requirements
 | Requirement | Description | Verification Method |
