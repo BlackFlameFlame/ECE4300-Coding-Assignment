@@ -35,31 +35,14 @@ module data_memory (
         begin
             read_data = 0;
         
-            // 1. Initialize DMEM[0-5] from data.txt
-            $readmemb("data.txt", DMEM);
-        
-            // 2. Initialize DMEM[6-255] to 6-255
-            for (i = 6; i < 256; i = i + 1) 
+            // 1. Initialize DMEM[0-5] from data.mem
+            $readmemb("data.mem", DMEM);
+            
+            for(i = 6; i < 256; i = i + 1)
                 begin
                     DMEM[i] = i;
                 end
-        
-            // Display DMEM[0-5] in Tcl Console to verify data.txt loaded properly
-            $display("From Data Memory (data.txt):");
-            for (i = 0; i < 6; i = i + 1) 
-                begin
-                    $display("\tDMEM[%0d] = %0h", i, DMEM[i]);
-                end
-        
-            // Display DMEM[6-9] and DMEM[255]
-            $display("From Data Memory (initial):");
-            for (i = 6; i < 10; i = i + 1) 
-                begin
-                    $display("\tDMEM[%0d] = %0d", i, DMEM[i]);
-                end
-            $display("\t...");
-            $display("\tDMEM[%0d] = %0d", 255, DMEM[255]);
-        end
+        end                  
 
         // Synchronous write on positive clock edge
         always @(posedge clk) 
