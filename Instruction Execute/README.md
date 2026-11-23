@@ -7,7 +7,7 @@ Adder, Top Mux, ALU, ALU Control, Bottom Mux, EX/Mem Pipeline Latch
 
 
 Out of Scope:
-Writeback, Memory, ALU Source, ALUOp, Register Destination, and forwarding logic
+Writeback, Memory, ALU Source, ALUOp, Register Destination
 
 Assumption:
 - The Execute stage receives the necessary data and control signals from the Instruction Decode (ID) stage through the ID/EX pipeline latch.
